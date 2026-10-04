@@ -1,0 +1,8 @@
+target,raw_labels,target_n,hate_n,non_hate_n
+gender,gender,232,232,0
+age,age,102,102,0
+race_or_region_of_origin,region|race,893,893,0
+religion,religion,46,46,0
+politics,political,1790,1790,0
+occupation,job,365,365,0
+disability,disabled,99,99,0

@@ -1,0 +1,8 @@
+translator,selection_scope,judge,partition,completed_rows,throughput_denominator_n,measured_new_rows,seconds,rows_per_second,includes_model_load,scope,scope_detail,reused_rows_excluded
+exaone,retrieved,exaone,full,23615,23615,,40495.05193613586,0.5831576667006839,True,stage_including_load_and_validation,EXAONE denominator is all stage input rows; resumed-new count is not recorded,False
+gemma4,retrieved,exaone,full,23633,23633,,43206.62469779304,0.5469763066497336,True,stage_including_load_and_validation,EXAONE denominator is all stage input rows; resumed-new count is not recorded,False
+gemma4,retrieved,gemma4,full,23633,23633,23633,27886.46616167389,0.8474720268601228,False,inference_loop_after_model_load,"Includes tokenization, ledger writes and validation; excludes model loading",False
+exaone,retrieved,gemma4,gpu0,11988,11988,11988,14075.890824700939,0.8516690097484257,False,inference_loop_after_model_load,"Includes tokenization, ledger writes and validation; excludes model loading",False
+exaone,retrieved,gemma4,gpu1,11627,11627,11627,13847.991463853978,0.8396163465545737,False,inference_loop_after_model_load,"Includes tokenization, ledger writes and validation; excludes model loading",False
+exaone,random_new_only,gemma4,full,33287,33287,33287,38605.06363804592,0.8622444017213099,False,inference_loop_after_model_load,"Includes tokenization, ledger writes and validation; excludes model loading",True
+gemma4,random_new_only,gemma4,full,33322,33322,33322,38756.74250541511,0.8597729800264879,False,inference_loop_after_model_load,"Includes tokenization, ledger writes and validation; excludes model loading",True

@@ -1,0 +1,575 @@
+{
+  "schema": "annotation-reliability-shared300-v1",
+  "n_unique_texts": 300,
+  "human_raters": 3,
+  "llm_raters": 5,
+  "judgments_per_rater": 300,
+  "raters": [
+    {
+      "id": "human_001",
+      "family": "Human",
+      "label": "Human 1",
+      "n": 300,
+      "label_counts": {
+        "non-hate": 241,
+        "hate": 30,
+        "unclear": 29
+      },
+      "agreement_counts": {
+        "source": 157,
+        "exaone": 204,
+        "gemma4": 211
+      },
+      "agreement_percent": {
+        "source": 52.33333333333333,
+        "exaone": 68.0,
+        "gemma4": 70.33333333333334
+      },
+      "contrasts": {
+        "exaone": {
+          "gain_pp": 15.666666666666668,
+          "ci95_pp": [
+            10.0,
+            21.666666666666668
+          ],
+          "agreement_gains": 69,
+          "agreement_losses": 22
+        },
+        "gemma4": {
+          "gain_pp": 18.0,
+          "ci95_pp": [
+            12.666666666666668,
+            23.666666666666668
+          ],
+          "agreement_gains": 67,
+          "agreement_losses": 13
+        }
+      }
+    },
+    {
+      "id": "human_002",
+      "family": "Human",
+      "label": "Human 2",
+      "n": 300,
+      "label_counts": {
+        "non-hate": 162,
+        "hate": 104,
+        "unclear": 34
+      },
+      "agreement_counts": {
+        "source": 195,
+        "exaone": 219,
+        "gemma4": 226
+      },
+      "agreement_percent": {
+        "source": 65.0,
+        "exaone": 73.0,
+        "gemma4": 75.33333333333333
+      },
+      "contrasts": {
+        "exaone": {
+          "gain_pp": 8.0,
+          "ci95_pp": [
+            2.0,
+            14.000000000000002
+          ],
+          "agreement_gains": 55,
+          "agreement_losses": 31
+        },
+        "gemma4": {
+          "gain_pp": 10.333333333333334,
+          "ci95_pp": [
+            4.666666666666667,
+            16.0
+          ],
+          "agreement_gains": 54,
+          "agreement_losses": 23
+        }
+      }
+    },
+    {
+      "id": "human_003",
+      "family": "Human",
+      "label": "Human 3",
+      "n": 300,
+      "label_counts": {
+        "non-hate": 216,
+        "hate": 52,
+        "unclear": 32
+      },
+      "agreement_counts": {
+        "source": 175,
+        "exaone": 221,
+        "gemma4": 230
+      },
+      "agreement_percent": {
+        "source": 58.333333333333336,
+        "exaone": 73.66666666666667,
+        "gemma4": 76.66666666666667
+      },
+      "contrasts": {
+        "exaone": {
+          "gain_pp": 15.333333333333332,
+          "ci95_pp": [
+            9.666666666666666,
+            21.0
+          ],
+          "agreement_gains": 64,
+          "agreement_losses": 18
+        },
+        "gemma4": {
+          "gain_pp": 18.333333333333332,
+          "ci95_pp": [
+            13.333333333333334,
+            23.666666666666668
+          ],
+          "agreement_gains": 64,
+          "agreement_losses": 9
+        }
+      }
+    },
+    {
+      "id": "sol-6-exhigh-supplied",
+      "family": "GPT",
+      "label": "Sol 6 Exhigh",
+      "n": 300,
+      "label_counts": {
+        "non-hate": 227,
+        "hate": 63,
+        "unclear": 10
+      },
+      "agreement_counts": {
+        "source": 187,
+        "exaone": 243,
+        "gemma4": 261
+      },
+      "agreement_percent": {
+        "source": 62.33333333333333,
+        "exaone": 81.0,
+        "gemma4": 87.0
+      },
+      "contrasts": {
+        "exaone": {
+          "gain_pp": 18.666666666666668,
+          "ci95_pp": [
+            12.666666666666668,
+            24.666666666666668
+          ],
+          "agreement_gains": 76,
+          "agreement_losses": 20
+        },
+        "gemma4": {
+          "gain_pp": 24.666666666666668,
+          "ci95_pp": [
+            19.333333333333332,
+            30.0
+          ],
+          "agreement_gains": 80,
+          "agreement_losses": 6
+        }
+      }
+    },
+    {
+      "id": "astra-exhigh-supplied",
+      "family": "GPT",
+      "label": "Astra Exhigh",
+      "n": 300,
+      "label_counts": {
+        "non-hate": 207,
+        "hate": 70,
+        "unclear": 23
+      },
+      "agreement_counts": {
+        "source": 186,
+        "exaone": 233,
+        "gemma4": 255
+      },
+      "agreement_percent": {
+        "source": 62.0,
+        "exaone": 77.66666666666666,
+        "gemma4": 85.0
+      },
+      "contrasts": {
+        "exaone": {
+          "gain_pp": 15.666666666666668,
+          "ci95_pp": [
+            9.666666666666666,
+            21.666666666666668
+          ],
+          "agreement_gains": 69,
+          "agreement_losses": 22
+        },
+        "gemma4": {
+          "gain_pp": 23.0,
+          "ci95_pp": [
+            17.666666666666668,
+            28.333333333333332
+          ],
+          "agreement_gains": 75,
+          "agreement_losses": 6
+        }
+      }
+    },
+    {
+      "id": "gemini-3.8-flash",
+      "family": "Gemini",
+      "label": "3.8 Flash",
+      "n": 300,
+      "label_counts": {
+        "non-hate": 188,
+        "hate": 105,
+        "unclear": 7
+      },
+      "agreement_counts": {
+        "source": 213,
+        "exaone": 229,
+        "gemma4": 257
+      },
+      "agreement_percent": {
+        "source": 71.0,
+        "exaone": 76.33333333333333,
+        "gemma4": 85.66666666666667
+      },
+      "contrasts": {
+        "exaone": {
+          "gain_pp": 5.333333333333334,
+          "ci95_pp": [
+            -1.0,
+            11.666666666666666
+          ],
+          "agreement_gains": 57,
+          "agreement_losses": 41
+        },
+        "gemma4": {
+          "gain_pp": 14.666666666666666,
+          "ci95_pp": [
+            9.0,
+            20.341666666666544
+          ],
+          "agreement_gains": 65,
+          "agreement_losses": 21
+        }
+      }
+    },
+    {
+      "id": "gemini-3.1-pro-preview",
+      "family": "Gemini",
+      "label": "3.1 Pro",
+      "n": 300,
+      "label_counts": {
+        "non-hate": 189,
+        "hate": 100,
+        "unclear": 11
+      },
+      "agreement_counts": {
+        "source": 210,
+        "exaone": 233,
+        "gemma4": 261
+      },
+      "agreement_percent": {
+        "source": 70.0,
+        "exaone": 77.66666666666666,
+        "gemma4": 87.0
+      },
+      "contrasts": {
+        "exaone": {
+          "gain_pp": 7.666666666666666,
+          "ci95_pp": [
+            1.3333333333333335,
+            14.000000000000002
+          ],
+          "agreement_gains": 59,
+          "agreement_losses": 36
+        },
+        "gemma4": {
+          "gain_pp": 17.0,
+          "ci95_pp": [
+            11.333333333333332,
+            22.666666666666664
+          ],
+          "agreement_gains": 68,
+          "agreement_losses": 17
+        }
+      }
+    },
+    {
+      "id": "deepseek-v4-pro",
+      "family": "DeepSeek",
+      "label": "V4 Pro",
+      "n": 300,
+      "label_counts": {
+        "non-hate": 174,
+        "hate": 110,
+        "unclear": 16
+      },
+      "agreement_counts": {
+        "source": 204,
+        "exaone": 219,
+        "gemma4": 247
+      },
+      "agreement_percent": {
+        "source": 68.0,
+        "exaone": 73.0,
+        "gemma4": 82.33333333333334
+      },
+      "contrasts": {
+        "exaone": {
+          "gain_pp": 5.0,
+          "ci95_pp": [
+            -1.3333333333333335,
+            11.333333333333332
+          ],
+          "agreement_gains": 55,
+          "agreement_losses": 40
+        },
+        "gemma4": {
+          "gain_pp": 14.333333333333334,
+          "ci95_pp": [
+            8.666666666666668,
+            20.0
+          ],
+          "agreement_gains": 63,
+          "agreement_losses": 20
+        }
+      }
+    }
+  ],
+  "pairwise": [
+    {
+      "rater_a": "human_001",
+      "rater_b": "human_002",
+      "n": 300,
+      "cohen_kappa": 0.20601041577734136,
+      "agreement_count": 176,
+      "agreement_percent": 58.666666666666664
+    },
+    {
+      "rater_a": "human_001",
+      "rater_b": "human_003",
+      "n": 300,
+      "cohen_kappa": 0.24695397111913356,
+      "agreement_count": 211,
+      "agreement_percent": 70.33333333333334
+    },
+    {
+      "rater_a": "human_001",
+      "rater_b": "sol-6-exhigh-supplied",
+      "n": 300,
+      "cohen_kappa": 0.2661492465194939,
+      "agreement_count": 219,
+      "agreement_percent": 73.0
+    },
+    {
+      "rater_a": "human_001",
+      "rater_b": "astra-exhigh-supplied",
+      "n": 300,
+      "cohen_kappa": 0.21276709687784498,
+      "agreement_count": 202,
+      "agreement_percent": 67.33333333333333
+    },
+    {
+      "rater_a": "human_001",
+      "rater_b": "gemini-3.8-flash",
+      "n": 300,
+      "cohen_kappa": 0.23075062289847342,
+      "agreement_count": 194,
+      "agreement_percent": 64.66666666666666
+    },
+    {
+      "rater_a": "human_001",
+      "rater_b": "gemini-3.1-pro-preview",
+      "n": 300,
+      "cohen_kappa": 0.22687931537489048,
+      "agreement_count": 194,
+      "agreement_percent": 64.66666666666666
+    },
+    {
+      "rater_a": "human_001",
+      "rater_b": "deepseek-v4-pro",
+      "n": 300,
+      "cohen_kappa": 0.1670804929800009,
+      "agreement_count": 177,
+      "agreement_percent": 59.0
+    },
+    {
+      "rater_a": "human_002",
+      "rater_b": "human_003",
+      "n": 300,
+      "cohen_kappa": 0.38778034300791564,
+      "agreement_count": 201,
+      "agreement_percent": 67.0
+    },
+    {
+      "rater_a": "human_002",
+      "rater_b": "sol-6-exhigh-supplied",
+      "n": 300,
+      "cohen_kappa": 0.4237492985712436,
+      "agreement_count": 211,
+      "agreement_percent": 70.33333333333334
+    },
+    {
+      "rater_a": "human_002",
+      "rater_b": "astra-exhigh-supplied",
+      "n": 300,
+      "cohen_kappa": 0.39881001570118163,
+      "agreement_count": 203,
+      "agreement_percent": 67.66666666666666
+    },
+    {
+      "rater_a": "human_002",
+      "rater_b": "gemini-3.8-flash",
+      "n": 300,
+      "cohen_kappa": 0.5163890381515314,
+      "agreement_count": 222,
+      "agreement_percent": 74.0
+    },
+    {
+      "rater_a": "human_002",
+      "rater_b": "gemini-3.1-pro-preview",
+      "n": 300,
+      "cohen_kappa": 0.4630513495720869,
+      "agreement_count": 213,
+      "agreement_percent": 71.0
+    },
+    {
+      "rater_a": "human_002",
+      "rater_b": "deepseek-v4-pro",
+      "n": 300,
+      "cohen_kappa": 0.37986674159107325,
+      "agreement_count": 197,
+      "agreement_percent": 65.66666666666666
+    },
+    {
+      "rater_a": "human_003",
+      "rater_b": "sol-6-exhigh-supplied",
+      "n": 300,
+      "cohen_kappa": 0.4461093867066253,
+      "agreement_count": 231,
+      "agreement_percent": 77.0
+    },
+    {
+      "rater_a": "human_003",
+      "rater_b": "astra-exhigh-supplied",
+      "n": 300,
+      "cohen_kappa": 0.4280406726632772,
+      "agreement_count": 222,
+      "agreement_percent": 74.0
+    },
+    {
+      "rater_a": "human_003",
+      "rater_b": "gemini-3.8-flash",
+      "n": 300,
+      "cohen_kappa": 0.4097190445685001,
+      "agreement_count": 214,
+      "agreement_percent": 71.33333333333334
+    },
+    {
+      "rater_a": "human_003",
+      "rater_b": "gemini-3.1-pro-preview",
+      "n": 300,
+      "cohen_kappa": 0.3948285347515129,
+      "agreement_count": 212,
+      "agreement_percent": 70.66666666666667
+    },
+    {
+      "rater_a": "human_003",
+      "rater_b": "deepseek-v4-pro",
+      "n": 300,
+      "cohen_kappa": 0.36341590161094744,
+      "agreement_count": 202,
+      "agreement_percent": 67.33333333333333
+    },
+    {
+      "rater_a": "sol-6-exhigh-supplied",
+      "rater_b": "astra-exhigh-supplied",
+      "n": 300,
+      "cohen_kappa": 0.7967214823694978,
+      "agreement_count": 274,
+      "agreement_percent": 91.33333333333333
+    },
+    {
+      "rater_a": "sol-6-exhigh-supplied",
+      "rater_b": "gemini-3.8-flash",
+      "n": 300,
+      "cohen_kappa": 0.6308964295381284,
+      "agreement_count": 250,
+      "agreement_percent": 83.33333333333334
+    },
+    {
+      "rater_a": "sol-6-exhigh-supplied",
+      "rater_b": "gemini-3.1-pro-preview",
+      "n": 300,
+      "cohen_kappa": 0.6534519625433186,
+      "agreement_count": 253,
+      "agreement_percent": 84.33333333333334
+    },
+    {
+      "rater_a": "sol-6-exhigh-supplied",
+      "rater_b": "deepseek-v4-pro",
+      "n": 300,
+      "cohen_kappa": 0.5784575693356675,
+      "agreement_count": 239,
+      "agreement_percent": 79.66666666666666
+    },
+    {
+      "rater_a": "astra-exhigh-supplied",
+      "rater_b": "gemini-3.8-flash",
+      "n": 300,
+      "cohen_kappa": 0.6488651228972069,
+      "agreement_count": 249,
+      "agreement_percent": 83.0
+    },
+    {
+      "rater_a": "astra-exhigh-supplied",
+      "rater_b": "gemini-3.1-pro-preview",
+      "n": 300,
+      "cohen_kappa": 0.6699064735008251,
+      "agreement_count": 252,
+      "agreement_percent": 84.0
+    },
+    {
+      "rater_a": "astra-exhigh-supplied",
+      "rater_b": "deepseek-v4-pro",
+      "n": 300,
+      "cohen_kappa": 0.6275645772531255,
+      "agreement_count": 243,
+      "agreement_percent": 81.0
+    },
+    {
+      "rater_a": "gemini-3.8-flash",
+      "rater_b": "gemini-3.1-pro-preview",
+      "n": 300,
+      "cohen_kappa": 0.8427923720124855,
+      "agreement_count": 277,
+      "agreement_percent": 92.33333333333333
+    },
+    {
+      "rater_a": "gemini-3.8-flash",
+      "rater_b": "deepseek-v4-pro",
+      "n": 300,
+      "cohen_kappa": 0.6909656774646036,
+      "agreement_count": 253,
+      "agreement_percent": 84.33333333333334
+    },
+    {
+      "rater_a": "gemini-3.1-pro-preview",
+      "rater_b": "deepseek-v4-pro",
+      "n": 300,
+      "cohen_kappa": 0.7126561887761766,
+      "agreement_count": 256,
+      "agreement_percent": 85.33333333333334
+    }
+  ],
+  "bootstrap": {
+    "draws": 10000,
+    "seed": 20261001,
+    "confidence": 0.95,
+    "method": "percentile paired bootstrap within translator strata",
+    "stratum_sample_sizes": {
+      "exaone": 150,
+      "gemma4": 150
+    },
+    "intervals": "pointwise; no multiple-comparison adjustment"
+  },
+  "unclear_policy": "Retained in every denominator; matches neither binary label set; third category in kappa"
+}

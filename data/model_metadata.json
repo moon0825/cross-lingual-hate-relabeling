@@ -1,0 +1,30 @@
+{
+  "purpose": "Companion reproduction metadata; long revisions omitted from reader-facing text",
+  "models": [
+    {
+      "role": "translation_and_annotation",
+      "model": "LGAI-EXAONE/EXAONE-4.0-32B",
+      "revision": "a1d54d1c148c30881ed27e035b650da489b51b92"
+    },
+    {
+      "role": "translation_and_annotation",
+      "model": "google/gemma-4-31B-it",
+      "revision": "842da3794eaa0b77d5f08bae87a17459d91ff475"
+    },
+    {
+      "role": "retrieval",
+      "model": "BAAI/bge-m3",
+      "revision": "5617a9f61b028005a4858fdac845db406aefb181"
+    },
+    {
+      "role": "classifier",
+      "model": "beomi/KcELECTRA-base",
+      "revision": "681201a097b8120e6dd2a2e63a3e13d338736f88"
+    },
+    {
+      "role": "classifier",
+      "model": "FacebookAI/xlm-roberta-base",
+      "revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089"
+    }
+  ]
+}

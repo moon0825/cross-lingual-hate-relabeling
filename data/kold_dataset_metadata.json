@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "dataset": "KOLD",
+  "purpose": "Machine-readable release identity accompanying Supplementary Section S14.",
+  "author_release": {
+    "repository": "https://github.com/boychaboy/KOLD",
+    "commit": "6f458b205e5ef4c6ad74afd99cd48ce738384ddb",
+    "repository_path": "data/kold_v1.json",
+    "sha256": "c11c29b972ecb7c63936cc8daa6e0925b6b891a78b6e6b3c321dbae238cf5468",
+    "records": 40429,
+    "split_identifiers_provided": false
+  },
+  "evaluation_population": {
+    "records": 40129,
+    "excluded_overlap_records": 300,
+    "positive_records": 12353,
+    "negative_records": 27776,
+    "naver_records": 21840,
+    "youtube_records": 18289
+  },
+  "label_mapping": {
+    "positive": "OFF = true and TGT = group",
+    "negative": "OFF = false and TGT = null, or OFF = true and TGT in {individual, untargeted, other}"
+  },
+  "analysis_files": {
+    "kold_cell_metrics.csv": "Per-repeat condition metrics",
+    "kold_contrasts.csv": "Eight paired relabel-minus-source contrasts",
+    "kold_strata.csv": "Descriptive platform, OFF/TGT, group-component, and class results"
+  }
+}
