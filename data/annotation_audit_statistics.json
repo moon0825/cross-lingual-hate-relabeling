@@ -1,7 +1,7 @@
 {
-  "schema": "annotation-reliability-shared300-v1",
+  "schema": "annotation-reliability-shared300-v2",
   "n_unique_texts": 300,
-  "human_raters": 3,
+  "human_raters": 4,
   "llm_raters": 5,
   "judgments_per_rater": 300,
   "raters": [
@@ -125,6 +125,47 @@
           ],
           "agreement_gains": 64,
           "agreement_losses": 9
+        }
+      }
+    },
+    {
+      "id": "human_004",
+      "family": "Human",
+      "label": "Human 4",
+      "n": 300,
+      "label_counts": {
+        "non-hate": 197,
+        "hate": 81,
+        "unclear": 22
+      },
+      "agreement_counts": {
+        "source": 200,
+        "exaone": 225,
+        "gemma4": 255
+      },
+      "agreement_percent": {
+        "source": 66.66666666666666,
+        "exaone": 75.0,
+        "gemma4": 85.0
+      },
+      "contrasts": {
+        "exaone": {
+          "gain_pp": 8.333333333333332,
+          "ci95_pp": [
+            2.3333333333333335,
+            14.333333333333334
+          ],
+          "agreement_gains": 57,
+          "agreement_losses": 32
+        },
+        "gemma4": {
+          "gain_pp": 18.333333333333332,
+          "ci95_pp": [
+            12.666666666666668,
+            24.0
+          ],
+          "agreement_gains": 68,
+          "agreement_losses": 13
         }
       }
     },
@@ -341,7 +382,12 @@
       "n": 300,
       "cohen_kappa": 0.20601041577734136,
       "agreement_count": 176,
-      "agreement_percent": 58.666666666666664
+      "agreement_percent": 58.666666666666664,
+      "ci95_kappa": [
+        0.12974998582100547,
+        0.28320250802748437
+      ],
+      "undefined_bootstrap_draws": 0
     },
     {
       "rater_a": "human_001",
@@ -349,7 +395,25 @@
       "n": 300,
       "cohen_kappa": 0.24695397111913356,
       "agreement_count": 211,
-      "agreement_percent": 70.33333333333334
+      "agreement_percent": 70.33333333333334,
+      "ci95_kappa": [
+        0.14339484128121013,
+        0.35024974152270616
+      ],
+      "undefined_bootstrap_draws": 0
+    },
+    {
+      "rater_a": "human_001",
+      "rater_b": "human_004",
+      "n": 300,
+      "cohen_kappa": 0.2320364972753771,
+      "agreement_count": 199,
+      "agreement_percent": 66.33333333333333,
+      "ci95_kappa": [
+        0.14085906807398174,
+        0.3233991567215142
+      ],
+      "undefined_bootstrap_draws": 0
     },
     {
       "rater_a": "human_001",
@@ -397,7 +461,25 @@
       "n": 300,
       "cohen_kappa": 0.38778034300791564,
       "agreement_count": 201,
-      "agreement_percent": 67.0
+      "agreement_percent": 67.0,
+      "ci95_kappa": [
+        0.3019189955650219,
+        0.4727700316243532
+      ],
+      "undefined_bootstrap_draws": 0
+    },
+    {
+      "rater_a": "human_002",
+      "rater_b": "human_004",
+      "n": 300,
+      "cohen_kappa": 0.4970765016150796,
+      "agreement_count": 218,
+      "agreement_percent": 72.66666666666667,
+      "ci95_kappa": [
+        0.4126737747388579,
+        0.5795688151708424
+      ],
+      "undefined_bootstrap_draws": 0
     },
     {
       "rater_a": "human_002",
@@ -441,6 +523,19 @@
     },
     {
       "rater_a": "human_003",
+      "rater_b": "human_004",
+      "n": 300,
+      "cohen_kappa": 0.4357189880560518,
+      "agreement_count": 220,
+      "agreement_percent": 73.33333333333333,
+      "ci95_kappa": [
+        0.33733242646758327,
+        0.5302996177996178
+      ],
+      "undefined_bootstrap_draws": 0
+    },
+    {
+      "rater_a": "human_003",
       "rater_b": "sol-6-exhigh-supplied",
       "n": 300,
       "cohen_kappa": 0.4461093867066253,
@@ -478,6 +573,46 @@
       "cohen_kappa": 0.36341590161094744,
       "agreement_count": 202,
       "agreement_percent": 67.33333333333333
+    },
+    {
+      "rater_a": "human_004",
+      "rater_b": "sol-6-exhigh-supplied",
+      "n": 300,
+      "cohen_kappa": 0.617097952850493,
+      "agreement_count": 249,
+      "agreement_percent": 83.0
+    },
+    {
+      "rater_a": "human_004",
+      "rater_b": "astra-exhigh-supplied",
+      "n": 300,
+      "cohen_kappa": 0.6236496689510976,
+      "agreement_count": 246,
+      "agreement_percent": 82.0
+    },
+    {
+      "rater_a": "human_004",
+      "rater_b": "gemini-3.8-flash",
+      "n": 300,
+      "cohen_kappa": 0.6275815370725651,
+      "agreement_count": 245,
+      "agreement_percent": 81.66666666666667
+    },
+    {
+      "rater_a": "human_004",
+      "rater_b": "gemini-3.1-pro-preview",
+      "n": 300,
+      "cohen_kappa": 0.6218345526167699,
+      "agreement_count": 244,
+      "agreement_percent": 81.33333333333333
+    },
+    {
+      "rater_a": "human_004",
+      "rater_b": "deepseek-v4-pro",
+      "n": 300,
+      "cohen_kappa": 0.5738269479121826,
+      "agreement_count": 234,
+      "agreement_percent": 78.0
     },
     {
       "rater_a": "sol-6-exhigh-supplied",
@@ -558,6 +693,200 @@
       "cohen_kappa": 0.7126561887761766,
       "agreement_count": 256,
       "agreement_percent": 85.33333333333334
+    }
+  ],
+  "actual_label_agreement": [
+    {
+      "human_id": "human_001",
+      "label_source": "source",
+      "n": 300,
+      "cohen_kappa": 0.13440003228344863,
+      "ci95_kappa": [
+        0.0705879354800024,
+        0.19972309880569505
+      ],
+      "delta_kappa_vs_source": null,
+      "ci95_delta_kappa": null,
+      "undefined_bootstrap_draws": 0,
+      "undefined_delta_bootstrap_draws": 0
+    },
+    {
+      "human_id": "human_001",
+      "label_source": "exaone",
+      "n": 300,
+      "cohen_kappa": 0.19180580889574866,
+      "ci95_kappa": [
+        0.0933810759296907,
+        0.28838379923373403
+      ],
+      "delta_kappa_vs_source": 0.057405776612300036,
+      "ci95_delta_kappa": [
+        -0.03434836916343523,
+        0.14594212404664134
+      ],
+      "undefined_bootstrap_draws": 0,
+      "undefined_delta_bootstrap_draws": 0
+    },
+    {
+      "human_id": "human_001",
+      "label_source": "gemma4",
+      "n": 300,
+      "cohen_kappa": 0.28462342255445705,
+      "ci95_kappa": [
+        0.1911743155644438,
+        0.37899345796571465
+      ],
+      "delta_kappa_vs_source": 0.15022339027100842,
+      "ci95_delta_kappa": [
+        0.0746839754404096,
+        0.2273712901331925
+      ],
+      "undefined_bootstrap_draws": 0,
+      "undefined_delta_bootstrap_draws": 0
+    },
+    {
+      "human_id": "human_002",
+      "label_source": "source",
+      "n": 300,
+      "cohen_kappa": 0.3719845288887117,
+      "ci95_kappa": [
+        0.28461866367190347,
+        0.4584200672280762
+      ],
+      "delta_kappa_vs_source": null,
+      "ci95_delta_kappa": null,
+      "undefined_bootstrap_draws": 0,
+      "undefined_delta_bootstrap_draws": 0
+    },
+    {
+      "human_id": "human_002",
+      "label_source": "exaone",
+      "n": 300,
+      "cohen_kappa": 0.4755018346643643,
+      "ci95_kappa": [
+        0.390828673765288,
+        0.5588235294117647
+      ],
+      "delta_kappa_vs_source": 0.1035173057756526,
+      "ci95_delta_kappa": [
+        -0.002727551574605166,
+        0.21305114254628185
+      ],
+      "undefined_bootstrap_draws": 0,
+      "undefined_delta_bootstrap_draws": 0
+    },
+    {
+      "human_id": "human_002",
+      "label_source": "gemma4",
+      "n": 300,
+      "cohen_kappa": 0.5255802025900757,
+      "ci95_kappa": [
+        0.4409047285003617,
+        0.6070083855721233
+      ],
+      "delta_kappa_vs_source": 0.15359567370136396,
+      "ci95_delta_kappa": [
+        0.05388756761709557,
+        0.2548320120032104
+      ],
+      "undefined_bootstrap_draws": 0,
+      "undefined_delta_bootstrap_draws": 0
+    },
+    {
+      "human_id": "human_003",
+      "label_source": "source",
+      "n": 300,
+      "cohen_kappa": 0.24945961091986235,
+      "ci95_kappa": [
+        0.17556883578267296,
+        0.3262635070265997
+      ],
+      "delta_kappa_vs_source": null,
+      "ci95_delta_kappa": null,
+      "undefined_bootstrap_draws": 0,
+      "undefined_delta_bootstrap_draws": 0
+    },
+    {
+      "human_id": "human_003",
+      "label_source": "exaone",
+      "n": 300,
+      "cohen_kappa": 0.39448134900357695,
+      "ci95_kappa": [
+        0.29586621427549104,
+        0.4900809879610808
+      ],
+      "delta_kappa_vs_source": 0.1450217380837146,
+      "ci95_delta_kappa": [
+        0.044916782349372665,
+        0.24355801412133474
+      ],
+      "undefined_bootstrap_draws": 0,
+      "undefined_delta_bootstrap_draws": 0
+    },
+    {
+      "human_id": "human_003",
+      "label_source": "gemma4",
+      "n": 300,
+      "cohen_kappa": 0.48086621180658573,
+      "ci95_kappa": [
+        0.38739904189057683,
+        0.5717866219450929
+      ],
+      "delta_kappa_vs_source": 0.23140660088672338,
+      "ci95_delta_kappa": [
+        0.1420068531097114,
+        0.3222333153236439
+      ],
+      "undefined_bootstrap_draws": 0,
+      "undefined_delta_bootstrap_draws": 0
+    },
+    {
+      "human_id": "human_004",
+      "label_source": "source",
+      "n": 300,
+      "cohen_kappa": 0.3803701255783212,
+      "ci95_kappa": [
+        0.29396767736583623,
+        0.4649610479811516
+      ],
+      "delta_kappa_vs_source": null,
+      "ci95_delta_kappa": null,
+      "undefined_bootstrap_draws": 0,
+      "undefined_delta_bootstrap_draws": 0
+    },
+    {
+      "human_id": "human_004",
+      "label_source": "exaone",
+      "n": 300,
+      "cohen_kappa": 0.44798822374877334,
+      "ci95_kappa": [
+        0.34470054988030935,
+        0.5434484231074238
+      ],
+      "delta_kappa_vs_source": 0.06761809817045211,
+      "ci95_delta_kappa": [
+        -0.05082056414218052,
+        0.18167992816518536
+      ],
+      "undefined_bootstrap_draws": 0,
+      "undefined_delta_bootstrap_draws": 0
+    },
+    {
+      "human_id": "human_004",
+      "label_source": "gemma4",
+      "n": 300,
+      "cohen_kappa": 0.6761658031088082,
+      "ci95_kappa": [
+        0.5921690138602713,
+        0.7552775995905402
+      ],
+      "delta_kappa_vs_source": 0.295795677530487,
+      "ci95_delta_kappa": [
+        0.19385638274320924,
+        0.3969537603407499
+      ],
+      "undefined_bootstrap_draws": 0,
+      "undefined_delta_bootstrap_draws": 0
     }
   ],
   "bootstrap": {

@@ -13,7 +13,7 @@ statistics accompanying the manuscript.
   for retrieved EXAONE translations; 184 condition-by-repeat result rows.
 - `data/kold_*.csv`: external evaluation on 40,129 KOLD comments, including
   276 condition-by-repeat results and eight paired contrasts.
-- `data/annotation_audit_*`: aggregate results from three human raters and
+- `data/annotation_audit_*`: aggregate results from four human raters and
   five LLM judges, each judging the same 300 translations. These are 300 texts
   in total, not 300 different texts for each judge.
 - `data/native_threshold_metrics.csv`: recorded native-task threshold metrics.
