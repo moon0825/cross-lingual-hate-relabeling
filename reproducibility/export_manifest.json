@@ -1,0 +1,50 @@
+{
+  "decision": "PASS",
+  "checked_training_frames": 552,
+  "contains_text": false,
+  "contains_labels": false,
+  "contains_evaluation_data": false,
+  "artifacts": [
+    {
+      "file": "requested_assignments.csv",
+      "sha256": "5a860774e1c0cb145f1e171133b0a6e90e50437521ee03b18b2278b5947c417e",
+      "bytes": 2922447,
+      "rows": 92000,
+      "columns": [
+        "repeat",
+        "selection",
+        "selection_order",
+        "source_corpus",
+        "source_row_id"
+      ]
+    },
+    {
+      "file": "retained_assignments.csv",
+      "sha256": "d2252a8a2345e45a7d6869deab583c3b5b6b82bb4a9b0847bbf9ff0ba7fc7b78",
+      "bytes": 8975797,
+      "rows": 183894,
+      "columns": [
+        "repeat",
+        "selection",
+        "translator",
+        "source_corpus",
+        "source_row_id",
+        "selection_order",
+        "retained_translation_order",
+        "training_frame_order"
+      ]
+    },
+    {
+      "file": "native_training_ids.csv",
+      "sha256": "1e90b0ab12e6f6e86e41989b89a7bd8c726515867a27713c8722c9a13f7e8399",
+      "bytes": 84744,
+      "rows": 4600,
+      "columns": [
+        "repeat",
+        "native_order",
+        "split",
+        "split_row_id"
+      ]
+    }
+  ]
+}

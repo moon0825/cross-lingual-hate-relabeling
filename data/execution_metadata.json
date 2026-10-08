@@ -1,0 +1,95 @@
+{
+  "repeat_seeds": [
+    20260901,
+    20260902,
+    20260903,
+    20260904,
+    20260905,
+    20260906,
+    20260907,
+    20260908,
+    20260909,
+    20260910,
+    20260911,
+    20260912,
+    20260913,
+    20260914,
+    20260915,
+    20260916,
+    20260917,
+    20260918,
+    20260919,
+    20260920,
+    20260921,
+    20260922,
+    20260923
+  ],
+  "native_assessment_grade_order": [
+    "normal",
+    "offensive",
+    "L1_hate",
+    "L2_hate"
+  ],
+  "native_assessment_seed_base": 20260960,
+  "query_and_random_rng": "numpy.random.default_rng(repeat_seed), PCG64; fixed frame row order",
+  "model_translation_seed_base": {
+    "exaone40": 2026090701,
+    "gemma": 2026090701
+  },
+  "gemma_annotation_seed": 20260908,
+  "retrieved_translation_assignment": "Gemma make_plan orders by descending rendered input token count, then corpus and row ID. EXAONE make_plan preserves reference_full_plan source groups; model-specific token lengths and seeds remain distinct.",
+  "random_translation_assignment": "plan sorts random-only sources by Gemma primary rendered token length descending, corpus and row ID. Both receive that order in up-to32 groups. EXAONE split_plan retains first16 groups/512rows and splits each subsequent group into up-to16; each half retains its parent greedy batch seed.",
+  "annotation_assignment": "EXAONE annotation uses the original generator make_plan length/ID sort and token budget. Gemma uses persisted input order plus batch_schedule; exact per-branch plans remain in execution evidence. Do not infer a new row sharding scheme from GPU count.",
+  "final_random_training_worker_assignment": "One model per worker, kcelectra or xlmr. cells(model) selects138 cells in repeat, translator, label order. Each cell contains its full frozen training frame, without splitting examples across classifier workers.",
+  "scope": "Public numerical settings and assignment order; scientific settings are unchanged.",
+  "initial_source_assignment": "See reproducibility/native_training_ids.csv and requested_assignments.csv.",
+  "generation_seed_derivation": "The original translation seed depends on a digest of original input texts, translator identity, and seed base. Original-text hashes and per-batch prompt hashes are not released here. The settings below alone do not constitute a complete generation replay.",
+  "native_sampling": {
+    "schema_version": 1,
+    "rng": "numpy.random.default_rng(seed), PCG64; preserve the cleaned training frame row order before sampling.",
+    "grade_sample_size": 500,
+    "execution_order": [
+      "annotation_instruction_development",
+      "native_training",
+      "superseded_assessment",
+      "final_assessment"
+    ],
+    "roles": {
+      "annotation_instruction_development": {
+        "rows": 2000,
+        "seed_base": 20260831,
+        "excluded_roles": [],
+        "use": "Earlier native-text assessment used to develop the annotation instruction; excluded from every classifier-training sample and the final assessment."
+      },
+      "native_training": {
+        "rows_per_repeat": 200,
+        "repeats": 23,
+        "unique_rows": 4548,
+        "seed_source": "repeat_seeds",
+        "excluded_roles": [
+          "annotation_instruction_development"
+        ],
+        "use": "Fixed 200-example samples used for classifier training and retrieval; retained unchanged when the final assessment was later sampled."
+      },
+      "superseded_assessment": {
+        "rows": 2000,
+        "seed_base": 20260940,
+        "excluded_roles": [
+          "annotation_instruction_development",
+          "native_training"
+        ],
+        "use": "Replaced before predictions after a pre-contract label-file alignment check; no assessment metrics were computed on this sample."
+      },
+      "final_assessment": {
+        "rows": 2000,
+        "seed_base": 20260960,
+        "excluded_roles": [
+          "annotation_instruction_development",
+          "native_training",
+          "superseded_assessment"
+        ],
+        "use": "Separate 500-per-grade native-text assessment supplying the reported EXAONE scores; disjoint from development, all fixed training/query IDs and the superseded assessment."
+      }
+    }
+  }
+}

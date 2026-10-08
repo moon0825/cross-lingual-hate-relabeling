@@ -1,0 +1,4 @@
+# Tested versions for numerical reproduction and summary plotting
+numpy==2.5.1
+scipy==1.18.0
+matplotlib==3.11.1
