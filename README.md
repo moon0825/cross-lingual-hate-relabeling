@@ -22,7 +22,9 @@ On Windows, use `.venv\Scripts\activate` to activate the environment.
 The commands need no credentials, source-text files, model weights, or GPU.
 `reproduce.py` checks release checksums, reconstructs 44 main contrasts, ten
 control contrasts (four primary tests and six descriptive comparisons), and
-eight KOLD contrasts. It compares all reconstructed entries with the released
+eight KOLD contrasts. The updated release also reconstructs 14 post-hoc target
+L-minus-W contrasts with Holm adjustment, four-rater nominal alpha, panel
+agreement gains, and aggregate error-turnover counts. It compares reconstructed entries with the released
 tables using an absolute numerical tolerance of 1e-12 and writes the results
 and a verification report to `outputs/`.
 
@@ -76,8 +78,8 @@ explicitly specifies percent or percentage points. In `annotation_audit_summary.
 the three `*_agreement` columns are counts out of `n` (300), not proportions.
 MCC and Cohen's kappa retain their native scale. Fields ending in `_gain_pp` are
 percentage-point differences; JSON fields named `agreement_percent` are percentages.
-Main, control-primary, and KOLD families use separate Holm corrections over 44,
-four, and eight comparisons. Performance-contrast confidence intervals are pointwise 95% intervals.
+Main, control-primary, KOLD, and post-hoc target families use separate Holm
+corrections over 44, four, eight, and 14 comparisons. Performance-contrast confidence intervals are pointwise 95% intervals.
 
 ## Scope and privacy
 
@@ -90,8 +92,16 @@ Private annotation-file fingerprints and internal approval metadata are excluded
 The code reproduces reported contrasts from run-level metrics. It does not retrain
 classifiers, regenerate translations/relabels, or rerun the item-level annotation
 bootstrap. These steps require the underlying datasets, original model environment,
-and item-level inputs described in the manuscript and supplement. The aggregate
-annotation check verifies counts and agreement-gain arithmetic only. Obtaining
+and item-level inputs described in the manuscript and supplement. The human point estimates are reconstructed from released category counts,
+six pairwise agreement counts, and class-conditioned cross-tabulations.
+Nominal alpha treats non-hate, hate, and unclear as distinct categories.
+The 95% intervals are reproduced by taking percentiles of the saved 10,000
+verified bootstrap estimates; the private item-row resampling itself cannot
+be rerun from this release. Those estimates were generated with shared
+translator-stratified item indices and all four raters kept fixed. Bootstrap
+CSV estimates have 12 significant digits, and quantile comparisons use
+an absolute tolerance of 1e-9; other numeric checks retain 1e-12.
+Agreement with a fixed panel is not independent gold-label accuracy. Obtaining
 the original source corpora remains subject to their distributors' access conditions;
 this release does not grant additional access to them.
 
@@ -100,3 +110,28 @@ this release does not grant additional access to them.
 A separate reuse license has not yet been assigned. Public availability should
 not be interpreted as a CC BY or software-license grant. The original datasets
 and models remain subject to their respective providers' terms.
+
+## Updated post-hoc analysis files
+
+- `data/human_reinforcement_summary.json`: fixed-panel alpha, agreement gains and 36 aggregate class cross-tabs.
+- `data/human_bootstrap_estimates.csv`: the saved 10,000 jointly sampled alpha and panel-gain estimates, with no item identities or responses.
+- `data/target_recall_reproduction.csv`: all model-by-arm-by-repeat-by-target recalls, checked against the original public target table.
+- `data/target_lw_repeat_differences.csv`: 322 paired L-minus-W recall differences.
+- `data/target_lw_contrasts.csv`: 14 paired t22 summaries, pointwise 95% intervals and Holm14 adjusted p values.
+- `data/target_lw_turnover_by_repeat.csv`: 414 aggregate four-way error tables.
+- `data/target_lw_turnover_summary.csv`: 18 descriptive summaries across the paired repeats.
+- `data/target_lw_item_turnover_histograms.csv`: ID-free frequency bins of correctness counts across 23 repeats, separately within each model and stratum. They reconstruct the unique-ever-recovered/error counts without releasing evaluation IDs.
+- `reproduce_reinforcement.py`: standalone public-input verification of these additions.
+
+Target recall uses the original overlapping target-positive masks restricted to human binary hate.
+Denominators are gender 232, age 102, race or region of origin 893, religion 46,
+politics 1,790, occupation 365, and disability 99. The 23 paired repeats vary the
+training/native-sampling bundle while the gold corpus and input pools stay fixed.
+Turnover is descriptive: repeated observations on the same comments are not
+independent samples. Overall non-hate correctness is available; positive-only
+target masks do not estimate target-specific false-positive rates. These are
+post-hoc diagnostics, not new-corpus confirmation or a fairness guarantee.
+
+The release contains no manuscript PDF, publisher full text, private input
+fingerprints, new evaluation row IDs, or individual human-response matrix.
+Existing ID-only training assignments retain their previous public scope.

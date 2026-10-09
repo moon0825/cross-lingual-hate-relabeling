@@ -184,8 +184,10 @@ def main():
         report[name] = compare(computed, reference, keys)
         write_csv(args.output / filename, computed, list(reference[0]))
     report["audit_aggregate_arithmetic"] = verify_audit()
+    from reproduce_reinforcement import run as reinforce
+    report["reinforcement"] = reinforce(args.output)
     report["status"] = "PASS"
-    report["holm_family_sizes"] = {"main": 44, "control_primary": 4, "kold": 8}
+    report["holm_family_sizes"] = {"main": 44, "control_primary": 4, "kold": 8, "posthoc_target_L_minus_W": 14}
     (args.output / "verification.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))
 
