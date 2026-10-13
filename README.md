@@ -1,3 +1,9 @@
+# Current manuscript materials
+
+The complete current numerical companion and instruction-boundary figure code are available in [the 13 October 2026 release](releases/eaai_20261013/README.md). Download [analysis_companion.zip](releases/eaai_20261013/analysis_companion.zip) and [policy_figure_recipe.zip](releases/eaai_20261013/policy_figure_recipe.zip), then follow the release README. The earlier files below are preserved for continuity.
+
+---
+
 # Supporting statistics and reproduction code
 
 **English-to-Korean data augmentation for hate-speech detection: Separating the effects of sentence retrieval and relabeling**
