@@ -1,6 +1,6 @@
 # Current manuscript materials
 
-The current numerical companion is available in [the 19 October 2026 release](releases/manuscript_20261019/README.md). Download [analysis_companion.zip](releases/manuscript_20261019/analysis_companion.zip), then follow the release README. The earlier files below are preserved for continuity.
+The complete current numerical companion and instruction-boundary figure code are available in [the 13 October 2026 release](releases/eaai_20261013/README.md). Download [analysis_companion.zip](releases/eaai_20261013/analysis_companion.zip) and [policy_figure_recipe.zip](releases/eaai_20261013/policy_figure_recipe.zip), then follow the release README. The earlier files below are preserved for continuity.
 
 ---
 
