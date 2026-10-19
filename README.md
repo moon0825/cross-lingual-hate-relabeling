@@ -1,6 +1,6 @@
 # Current manuscript materials
 
-The current numerical companion is available in [the 19 October 2026 release](releases/manuscript_20261019/README.md). Download [analysis_companion.zip](releases/manuscript_20261019/analysis_companion.zip), then follow the release README. The earlier files below are preserved for continuity.
+The current numerical companion is available in [the 19 October 2026 release](releases/manuscript_20261019/README.md). Download [analysis_companion.zip](releases/manuscript_20261019/analysis_companion.zip), then follow the release README. The [13 October 2026 release](releases/eaai_20261013/README.md) is kept unchanged. The earlier files below are preserved for continuity.
 
 ---
 
